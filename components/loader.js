@@ -9,7 +9,7 @@ export const FullScreenLoader = () => {
           style={{ color: "#cf8dea" }}
           className="text-center tracking-widest font-bold"
         >
-          THIS MIGHT TAKE A WHILE
+          LOADING
         </div>
       </div>
     </div>

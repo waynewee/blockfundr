@@ -18,7 +18,7 @@ export default function Contribute() {
   const [isError, setIsError] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
-  const campaign = useFetchCampaign(campaignAddress);
+  const { campaign, loaded } = useFetchCampaign(campaignAddress);
 
   if (!campaignAddress) {
     return null;
@@ -55,7 +55,7 @@ export default function Contribute() {
 
   return (
     <Wrapper>
-      {isLoading && <FullScreenLoader />}
+      {isLoading || (!loaded && <FullScreenLoader />)}
       <div className="max-w-screen-lg mx-auto py-12">
         <div className="bg-white rounded shadow-md p-6 w-2/3 mx-auto">
           <div className="mb-4 pb-4 border-b border-gray-300">

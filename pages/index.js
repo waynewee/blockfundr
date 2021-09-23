@@ -7,7 +7,7 @@ export default function Home(props) {
     <div className="bg-pink-50 min-h-screen">
       <Wrapper>
         <div className="max-w-screen-lg mx-auto">
-          <div className="py-24 flex items-center">
+          <div className="py-36 flex items-center">
             <div className="w-1/2">
               <div className="text-3xl font-bold mb-4">
                 Trustworthy fundraising on the blockchain. For life's highs and
@@ -33,7 +33,7 @@ export default function Home(props) {
               </div>
             </div>
             <div className="w-1/2">
-              <img src={"/young-people.png"} />
+              <img alt="hero-image" src={"/young-people.png"} />
             </div>
           </div>
         </div>

@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 
 export const useFetchCampaign = (campaignAddress) => {
   const [campaign, setCampaign] = useState({});
+  const [loaded, setLoaded] = useState(false);
 
   useEffect(async () => {
     if (campaignAddress) {
@@ -17,6 +18,8 @@ export const useFetchCampaign = (campaignAddress) => {
 
       const res = await axios.get(ipfsUrl);
 
+      setLoaded(true);
+
       setCampaign({
         ...res.data,
         ipfsUrl,
@@ -26,5 +29,8 @@ export const useFetchCampaign = (campaignAddress) => {
     }
   }, [campaignAddress]);
 
-  return campaign;
+  return {
+    loaded,
+    campaign,
+  };
 };
